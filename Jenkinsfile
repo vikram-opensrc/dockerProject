@@ -6,6 +6,6 @@ node {
       sh 'sudo docker build -t pipeline .'
     }
     stage("Create container."){
-      sh 'sudo docker rm c01 && sudo docker run -itd --name c01 -p 8081:80 pipeline'
+      sh 'sudo docker rm -f c01 && sudo docker run -itd --name c01 -p 8081:80 pipeline'
     }
 }
